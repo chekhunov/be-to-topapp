@@ -1,7 +1,17 @@
-export class ReviewModel {
-  name: string
-  titile: string
-  description: string
-  rating: string
-  createdAt: Date
+import { prop } from '@typegoose/typegoose'
+import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses'
+
+export interface ReviewModel extends Base {}
+export class ReviewModel extends TimeStamps {
+  @prop()
+  name: string;
+
+  @prop()
+  titile: string;
+
+  @prop()
+  description: string;
+
+  @prop()
+  rating: string;
 }
